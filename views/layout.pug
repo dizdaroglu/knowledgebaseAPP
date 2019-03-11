@@ -12,10 +12,18 @@ html
                 span.navbar-toggler-icon
             #navbarColor01.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
-                    li.nav-item.active
+                    li.nav-item
                         a.nav-link(href='/') Home 
                     li.nav-item
                         a.nav-link(href='/articles/add') Add Article
+                ul.navbar-nav.navbar-right
+                    if user
+                        li a(href="/users/logout") Logout
+                    else
+                        li
+                            a.nav-link(href='/users/register') Register
+                        li
+                            a.nav-link(href='/users/login') Login
       .container
         != messages('message',locals)
         if errors
